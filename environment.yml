@@ -1,0 +1,11 @@
+name: fast_bci
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - conda-forge::pytorch-gpu=2.0.*
+  - conda-forge::mne=1.2.3
+  - conda-forge::dvclive=3.0.0
+  - conda-forge::tqdm=4.66.*
+  - conda-forge::conda-build=3.26.*

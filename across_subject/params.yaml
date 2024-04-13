@@ -1,0 +1,71 @@
+across_subject:
+  #Parameters for MAML
+  adapt_lr: 0.001 #Inner loop learning rate
+  band_pass_filter: firwin #Filter for EEG preprocessing
+  band_pass_higher: 7.0 #Frequence range for EEG filtering
+  band_pass_lower: 30.0 #Frequency range for EEG filtering when lower > higher it works as band-stop
+  device: cuda:1 #GPU device
+  dropout: 0.25
+  epoch: 150
+  k_query: 11 #Number of samples per class in the query set
+  k_shot: 10 #Number of samples per class in the support set
+  label_mapping:
+  # Mapping of labels and task/activity in Physionet's dataset
+    0:
+    - - 6
+      - 10
+      - 14
+    - - T1
+    1:
+    - - 6
+      - 10
+      - 14
+    - - T2
+  meta_lr: 0.01 #Learning rate for the meta-update
+  seed: 42
+  task_batch_size: 4 #Number of tasks to sample at once
+  #Test subjects ranges from test_subject_start to test_subject_end
+  test_subject_end: 110
+  test_subject_start: 99
+  adapt_steps: 5 #Number of gradient updates in the inner loop
+  #Train subjects ranges from train_subject_start to train_subject_end
+  train_subject_end: 88
+  train_subject_start: 1
+  #Valid subjects ranges from valid_subject_start to valid_subject_end
+  valid_subject_end: 99
+  valid_subject_start: 88
+across_subject_baseline:
+  #Parameters for transfer learning. Most parameters are similar as in
+  #section `across_subject`
+  band_pass_filter: firwin
+  band_pass_higher: 7.0
+  band_pass_lower: 30.0
+  batch_size: 16
+  device: 1
+  dropout: 0.25
+  epoch: 150
+  k_finetune: 10 #Number of samples per class during finetuning
+  k_test: 11 #Number of sample per class for testing after finetuning
+  label_mapping:
+    0:
+    - - 6
+      - 10
+      - 14
+    - - T1
+    1:
+    - - 6
+      - 10
+      - 14
+    - - T2
+  lr: 0.001
+  num_samples: 21 #k_finetune + k_test
+  seed: 42
+  steps: 10
+  test_subject_end: 110
+  test_subject_start: 99
+  train_subject_end: 88
+  train_subject_start: 1
+  valid_subject_end: 99
+  valid_subject_start: 88
+  style: cross #`cross` means training and validation subjects are different, `same` means otherwise.
+  norm: layer #`layer` for layer norm and `batch` for batch norm 

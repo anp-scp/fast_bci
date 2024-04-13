@@ -1,0 +1,63 @@
+#This is similar to `../across_subject/params.yaml`. For description, please check the other file.
+across_subject:
+  adapt_lr: 0.001
+  band_pass_filter: firwin
+  band_pass_higher: 7.0
+  band_pass_lower: 30.0
+  device: cuda:1
+  dropout: 0.25
+  epoch: 150
+  k_query: 11
+  k_shot: 10
+  label_mapping:
+    0:
+    - - 5
+      - 9
+      - 13
+    - - T1
+    1:
+    - - 5
+      - 9
+      - 13
+    - - T2
+  meta_lr: 0.01
+  seed: 42
+  task_batch_size: 4
+  test_subject_end: 110
+  test_subject_start: 99
+  adapt_steps: 10
+  train_subject_end: 88
+  train_subject_start: 1
+  valid_subject_end: 99
+  valid_subject_start: 88
+across_subject_baseline:
+  band_pass_filter: firwin
+  band_pass_higher: 7.0
+  band_pass_lower: 30.0
+  batch_size: 16
+  device: 1
+  dropout: 0.25
+  epoch: 150
+  k_finetune: 10
+  k_test: 11
+  label_mapping:
+    0:
+    - - 5
+      - 9
+      - 13
+    - - T1
+    1:
+    - - 5
+      - 9
+      - 13
+    - - T2
+  lr: 0.001
+  num_samples: 21
+  seed: 42
+  steps: 10
+  test_subject_end: 110
+  test_subject_start: 99
+  train_subject_end: 88
+  train_subject_start: 1
+  valid_subject_end: 99
+  valid_subject_start: 88
