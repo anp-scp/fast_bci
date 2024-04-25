@@ -1,6 +1,6 @@
 # Fast BCI
 
-Pytorch code for the paper `Evaluating Fast Adaptability of Neural Networksfor Brain-Computer Interface` [Accepted in IJCNN 24].
+Pytorch code for the paper [Evaluating Fast Adaptability of Neural Networksfor Brain-Computer Interface](https://arxiv.org/abs/2404.15350) [Accepted in IJCNN 24].
 
 Open `docs/index.html` in a browser for web based documentation.
 
